@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     
-    return redirect()->route('users.login');
+    return redirect()->route('home.index');
 });
 Route::group([
     'middleware' => 'auth',
@@ -48,6 +48,7 @@ Route::group([
             Route::post('/update/{id}','NewController@update')->name('new.update');
             Route::get('/delete/{id}','NewController@delete')->name('new.delete');
             Route::post('/destroy/{id}','NewController@destroy')->name('new.destroy');
+    
         });
 });
 
@@ -72,6 +73,7 @@ Route::group([
     Route::get('Cart/add/{id}','CartController@add')->name('cart.add');
     Route::get('Cart/delete/{id}','CartController@delete')->name('cart.delete');
     Route::get('Cart/update','CartController@update')->name('cart.update');
+    Route::post('Cart/checkout','CartController@checkout')->name('cart.checkout');
     
     
 });
