@@ -14,10 +14,12 @@ class DetailController extends Controller
     {
         $product=Product::find($id);
         $categories=Category::all();
+
         $arr=[
             'product'=>$product,
             'categories'=>$categories
         ];
-        return view('page.layouts.detail',$arr);
+
+        return view('page.layouts.detail', $arr);
     }
 }

@@ -1,7 +1,7 @@
 @extends('admin.layouts.main')
 @section('content')
 <form action="" method="POST">
-    {{ csrf_field() }}
+  {{ csrf_field() }}
     <div class="form-group">
       <label for="formGroupExampleInput">Name</label>
       <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Name" name="name" value="{{$category->name}}">

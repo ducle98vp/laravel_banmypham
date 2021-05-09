@@ -103,7 +103,7 @@
 		<div class="customer-login-area">
 			<div class="container">
 				<div class="row">
-                    <div class="col-md-6 col-xs-12">
+                    <div class="div-login">
 						<div class="customer-register my-account">
 						<form method="post" class="register" id="register" action="{{Route('users.postSignup')}}">
 								{{ csrf_field() }}
@@ -113,9 +113,8 @@
 										<label for="reg_password">Full Name <span class="required">*</span></label>
 										<input type="text" class="input-text" name="username" id="username">
 										@error('username')
-										<p style="color: red">{{$message}}</p>
+											<p style="color: red">{{$message}}</p>
 										@enderror
-
 									</p>
 									<p class="form-row form-row-wide">
 										<label for="reg_email">Email address <span class="required">*</span></label>

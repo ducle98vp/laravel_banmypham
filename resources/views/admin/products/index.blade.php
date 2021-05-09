@@ -2,6 +2,11 @@
 @extends('admin.layouts.main')
 @section('title', 'Trang liệt kê')
 @section('content')
+@if (session('success'))
+  <div class="alert alert-success" role="alert">
+    {{ session('success') }}
+  </div>
+@endif
 <div><a href="{{route('products.create')}}" class="btn btn-primary">Thêm Mới</a></div>
 <table class="table table-bordered">
     <thead>
@@ -23,6 +28,7 @@
       </tr>
     </thead>
     <tbody>
+      {{-- //lap danh sach san pham va in ra thuoc tinh --}}
         @foreach($products AS $product)
       <tr>
         <td>{{$product->id}}</td>

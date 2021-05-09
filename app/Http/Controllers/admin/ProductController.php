@@ -9,23 +9,26 @@ use App\Traits\Image;
 class ProductController extends Controller
 {
     use Image;
+
     public function index()
     {
-        $categories=Category::all();
-        $products=Product::all();
-        $products=Product::paginate(4);
-        $arr=[
+        $categories = Category::all();
+        $products = Product::paginate(4);
+
+        $arr=[//dua du lieu vao 1 mang
             'products'=>$products,
             'categories'=>$categories
         ];
+
         return view('admin.products.index',$arr);
     }
+
     public function create()
     {
-
         $categories=Category::all();
         return view('admin.products.create',compact('categories'));
     }
+
     public function store(Request $request)
     {
         $rules=[
@@ -76,6 +79,7 @@ class ProductController extends Controller
 		
        
     }
+
     public function edit($id)
     {
         $product=Product::find($id);
@@ -88,6 +92,7 @@ class ProductController extends Controller
         return view('admin.products.edit',$arr);
         
     }
+
     public function update(Request $request ,$id)
     {
         $rules=[
@@ -98,6 +103,7 @@ class ProductController extends Controller
             'quality'=>'bail|required|max:11',
             'content'=>'required'
         ];
+
         $messages=[
             'name.required'=>'Name ko được để trống',
             'name.min'=>'Name ít nhất 3 ký tự',
@@ -110,12 +116,14 @@ class ProductController extends Controller
             'quality.max'=>'Quality quá lớn vui lòng thử lại sau',
             'content.required'=>'Content không được để trống'
         ];
+
         $request->validate($rules,$messages);
+
         $product=Product::find($id);
-        if(!empty($request->avatar))
-        {
+        if(!empty($request->avatar)) {
             $product->avatar= $this->uploadImage($request->avatar);
         }
+
         $product->title=$request->name;
         $product->category_id=$request->category;
         $product->price=$request->price;
@@ -124,24 +132,22 @@ class ProductController extends Controller
         $product->quality=$request->quality;
         $product->content=$request->content;
         $is_update=$product->save();
-        return redirect()->Route('products.index');
-        if($is_update)
-        {
-            $request->session()->flash('success','Update thành công');
-        }
-        else
-        {
-            $request->session()->flash('error','Update thất bại');
+
+        if($is_update) {
+            $request->session()->flash('success','Cập nhật thành công');
+        } else {
+            $request->session()->flash('error','Cập nhật thất bại');
         }
 
-       
-        
+        return redirect()->Route('products.index');
     }
+
     public function delete($id)
     {
-        $product=Product::findOrFail($id);
+        $product = Product::findOrFail($id);
         $product->delete();
-        return redirect()->route('products.index');
+        $request->session()->flash('success', 'Xóa thành công');
 
+        return redirect()->route('products.index');
     }
 }

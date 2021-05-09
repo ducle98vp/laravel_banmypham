@@ -12,10 +12,10 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $products=Product::all();
-        $categories=Category::all();
-        $news=DB::table('news')->orderBy('id','desc')->limit(3)->get();
-        $products_new=DB::table('products')->orderBy('created_at','desc')->get();
+        $products = Product::all();
+        $categories = Category::all();
+        $news = News::orderBy('id', 'desc')->limit(3)->get();
+        $products_new = Product::orderBy('created_at','desc')->get();
        
         $arr=[
             'products' => $products,
@@ -24,6 +24,7 @@ class HomeController extends Controller
             'news'=>$news
             
         ];
-        return view('page.layouts.home',$arr);
+
+        return view('page.layouts.home', $arr);
     }
 }

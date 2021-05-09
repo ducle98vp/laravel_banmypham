@@ -10,9 +10,9 @@ trait Image
     {
             $imgName = $file->getClientOriginalName();//lấy ra tên file ảnh
             $imgName = time() . rand(0, 999999) . $imgName;//đặt lại tên file ảnh
-            $dir_uploads = public_path('assets/uploads');
-            $file->move($dir_uploads, $imgName);
-            return $imgName;
+            $dir_uploads = public_path('assets/uploads');// tao ra thu muc voi duong dan assets/upload
+            $file->move($dir_uploads, $imgName);// di chuyen file va duong dan vua tao o tren
+            return $imgName;// tra ve ten file vua luu
     }
     function deleteImage($image)
     {

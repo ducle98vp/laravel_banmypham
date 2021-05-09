@@ -21,6 +21,7 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => $request->password
         ];
+
         if (Auth::attempt($arr)) {
            return redirect()->route('categories.index');
         } else {
@@ -34,13 +35,15 @@ class UserController extends Controller
     public function postSignup(Request $request)
     {
         $variable=$request->password;
+
         $rules=[
             'username'=>'bail|required|min:6|max:255',
             'password'=>'bail|required|min:6|max:255',
             'email'=>'bail|required|email|max:255|unique:users,email',
             'password_confirm'=>'bail|required|in:'.$variable,
-            'phone'=>'bail|required'
+            'phone'=>'bail|required|min:10|max:11',
         ];
+
         $messages=[
             'username.required'=>'Không được để trống user name',
             'username.min'=>'User name phải từ 6 ký tự',
@@ -53,48 +56,55 @@ class UserController extends Controller
             'password_confirm.required'=>'Mời bạn nhập lại pass word',
             'password_confirm.in'=>'nhập lại password chưa đúng',
             'phone.required'=>'Bạn chưa nhập số điện thoại',
-            'email.unique'=>'Email đã được sử dụng'
+            'email.unique'=>'Email đã được sử dụng',
+            'phone.min' => 'số điện thoại không phải từ 10 ký tự',
+            'phone.max' => 'số điện thoại không phải nhở hơn 11 ký tự'
         ];
+
         $request->validate($rules,$messages);
         $password=bcrypt($request->password);
+
         $arr_inser=[
             'username'=>$request->username,
             'password'=>$password,
             'phone'=>$request->phone,
             'email'=>$request->email,
         ];
+
         $is_insert=Users::insert($arr_inser);
         if($is_insert)
         {
             return redirect()->route('users.login');
         }
-        
-
     }
+
     public function editUser()
     {
         return view('admin.users.edit');
     }
+
     public function update(Request $request)
     {
         
         $check="";
+
         if(auth()->user()->email==$request->email)
         {
             $check="";
-        }
-        else{
+        } else{
             $check="|max:255|unique:users,email";
         }
+
         $rules=[
             'first_name'=>'bail|required|max:255',
             'last_name'=>'bail|required|max:255',
             'email'=>'bail|required|email'.$check,
-            'phone'=>'bail|required',
+            'phone'=>'bail|required|regex:/^[\d]+([-.\d]+)?$/',
             'address'=>'bail|required|max:255',
             'facebook'=>'bail|required|max:555',
             'avatar'=>'image',
         ];
+
         $messages=[
             'first_name.required'=>'Không được để trống first name',
             'first_name.max'=>'first name không được quá 255 ký tự',
@@ -108,6 +118,7 @@ class UserController extends Controller
             'address.max'=>'address không được quá 255 ký tự',
             'facebook.required'=>'Không được để trống facebook',
             'facebook.max'=>'facebook không được quá 255 ký tự',
+            'phone.regex' => 'số điện thoại không đúng định dạng'
 
             
         ];
@@ -123,10 +134,10 @@ class UserController extends Controller
         $user->save();
         return back();
     }
+
     public function getLogout()
     {
         Auth::logout();
         return view('admin.users.login');
     }
-
 }

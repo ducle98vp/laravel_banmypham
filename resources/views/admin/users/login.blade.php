@@ -103,7 +103,7 @@
 		<div class="customer-login-area">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-6 col-xs-12">
+					<div class="div-login">
 						<div class="customer-login my-account">
 						<form method="post" class="login" action="{{Route('user.postLogin')}}">
 								@csrf

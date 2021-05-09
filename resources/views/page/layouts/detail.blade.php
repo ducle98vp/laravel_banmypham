@@ -27,37 +27,9 @@
 						<div class="zoomWrapper">
 							<div id="img-1" class="zoomWrapper single-zoom">
 								<a href="#">
-                                <img id="zoom1" src="/assets/uploads/{{$product->avatar}}" data-zoom-image="/assets/uploads/{{$product->avatar}}" alt="big-1">
+                  <img id="zoom1" src="/assets/uploads/{{$product->avatar}}" data-zoom-image="/assets/uploads/{{$product->avatar}}" alt="big-1">
 								</a>
 							</div>
-							{{-- <div class="single-zoom-thumb">
-								<ul class="bxslider" id="gallery_01">
-									<li>
-										<a href="#" class="elevatezoom-gallery active" data-update="" data-image="img/product-details/big-1-1.jpg" data-zoom-image="img/product-details/ex-big-1-1.jpg"><img src="img/product-details/th-1-1.jpg" alt="zo-th-1" /></a>
-									</li>
-									<li class="">
-										<a href="#" class="elevatezoom-gallery" data-image="img/product-details/big-1-2.jpg" data-zoom-image="img/product-details/ex-big-1-2.jpg"><img src="img/product-details/th-1-2.jpg" alt="zo-th-2"></a>
-									</li>
-									<li class="">
-										<a href="#" class="elevatezoom-gallery" data-image="img/product-details/big-1-3.jpg" data-zoom-image="img/product-details/ex-big-1-3.jpg"><img src="img/product-details/th-1-3.jpg" alt="ex-big-3" /></a>
-									</li>
-									<li class="">
-										<a href="#" class="elevatezoom-gallery" data-image="img/product-details/big-4.jpg" data-zoom-image="img/product-details/ex-big-4.jpg"><img src="img/product-details/th-4.jpg" alt="zo-th-4"></a>
-									</li>
-									<li class="">
-										<a href="#" class="elevatezoom-gallery" data-image="img/product-details/big-5.jpg" data-zoom-image="img/product-details/ex-big-5.jpg"><img src="img/product-details/th-5.jpg" alt="zo-th-5" /></a>
-									</li>
-									<li class="">
-										<a href="#" class="elevatezoom-gallery" data-image="img/product-details/big-6.jpg" data-zoom-image="img/product-details/ex-big-6.jpg"><img src="img/product-details/th-6.jpg" alt="ex-big-3" /></a>
-									</li>
-									<li class="">
-										<a href="#" class="elevatezoom-gallery" data-image="img/product-details/big-7.jpg" data-zoom-image="img/product-details/ex-big-7.jpg"><img src="img/product-details/th-7.jpg" alt="ex-big-3" /></a>
-									</li>
-									<li class="">
-										<a href="#" class="elevatezoom-gallery" data-image="img/product-details/big-8.jpg" data-zoom-image="img/product-details/ex-big-8.jpg"><img src="img/product-details/th-8.jpg" alt="ex-big-3" /></a>
-									</li>
-								</ul>
-							</div> --}}
 						</div>
 					</div>
 					<div class="col-md-7 col-sm-7 col-xs-12">

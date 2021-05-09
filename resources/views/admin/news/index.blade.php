@@ -2,6 +2,11 @@
 @extends('admin.layouts.main')
 @section('title', 'Trang liệt kê tin tức')
 @section('content')
+@if (session('success'))
+  <div class="alert alert-success" role="alert">
+    {{ session('success') }}
+  </div>
+@endif
 <div><a href="{{route('new.create')}}" class="btn btn-primary">Thêm Mới</a></div>
 <table class="table table-bordered">
     <thead>

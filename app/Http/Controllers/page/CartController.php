@@ -25,19 +25,23 @@ class CartController extends Controller
     }
     public function add(Request $request,$id)
     {
-        $product=Product::find($id);
+        $product = Product::find($id);
+
         Cart :: add ([ 
             'id' => $id , 
             'name' => $product->title , 
             'qty' => 1 , 
             'price' => $product->price , 
             'weight' => 0 , 
-            'options' => [ 'avatar' => $product->avatar ]]);
+            'options' => [ 'avatar' => $product->avatar ]
+        ]);
+
         return redirect()->Route('cart.index');
     }
     public function delete($id)
     {
         Cart::remove($id);
+
         return redirect()->Route('cart.index');
     }
     public function update(Request $request)
@@ -52,8 +56,8 @@ class CartController extends Controller
             'email'=>'bail|required|email|max:255',
             'phone'=>'bail|required',
             'note'=>'bail|required',
-            
         ];
+
         $messages=[
             'name.required'=>'Họ tên ko được để trống',
             'name.max'=>'Họ Tên không vượt quá 255 ký tự',
@@ -64,6 +68,7 @@ class CartController extends Controller
             'phone.required'=>'Phone không được để trống',
             'note.required'=>'Note không được để trống'
         ];
+
         $request->validate($rules,$messages);
         DB::beginTransaction();
         try{
@@ -78,7 +83,7 @@ class CartController extends Controller
             $order->save(); 
             
             $order_id=$order->id;
-            $products=Cart::content();
+            $products = Cart::content();
             foreach($products as $product)
             {
                 $order_detail= new Order_detail;
@@ -102,7 +107,5 @@ class CartController extends Controller
             DB::rollback();
             throw $e;
         }
-       
-        
     }
 }

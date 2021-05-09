@@ -27,14 +27,14 @@
     <div class="container">
         <div class="row">
             <div class="brand-carousel">
-                <div class="brand-item"><a href="#"><img src="img/brand/bg1-brand.jpg" alt="" /></a></div>
-                <div class="brand-item"><a href="#"><img src="img/brand/bg2-brand.jpg" alt="" /></a></div>
-                <div class="brand-item"><a href="#"><img src="img/brand/bg3-brand.jpg" alt="" /></a></div>
-                <div class="brand-item"><a href="#"><img src="img/brand/bg4-brand.jpg" alt="" /></a></div>
-                <div class="brand-item"><a href="#"><img src="img/brand/bg5-brand.jpg" alt="" /></a></div>
-                <div class="brand-item"><a href="#"><img src="img/brand/bg2-brand.jpg" alt="" /></a></div>
-                <div class="brand-item"><a href="#"><img src="img/brand/bg3-brand.jpg" alt="" /></a></div>
-                <div class="brand-item"><a href="#"><img src="img/brand/bg4-brand.jpg" alt="" /></a></div>
+                <div class="brand-item"><a href="#"><img src="/img/brand/bg1-brand.jpg" alt="" /></a></div>
+                <div class="brand-item"><a href="#"><img src="/img/brand/bg2-brand.jpg" alt="" /></a></div>
+                <div class="brand-item"><a href="#"><img src="/img/brand/bg3-brand.jpg" alt="" /></a></div>
+                <div class="brand-item"><a href="#"><img src="/img/brand/bg4-brand.jpg" alt="" /></a></div>
+                <div class="brand-item"><a href="#"><img src="/img/brand/bg5-brand.jpg" alt="" /></a></div>
+                <div class="brand-item"><a href="#"><img src="/img/brand/bg2-brand.jpg" alt="" /></a></div>
+                <div class="brand-item"><a href="#"><img src="/img/brand/bg3-brand.jpg" alt="" /></a></div>
+                <div class="brand-item"><a href="#"><img src="/img/brand/bg4-brand.jpg" alt="" /></a></div>
             </div>
         </div>
     </div>
@@ -180,42 +180,42 @@
                 <div class="col-md-2 col-sm-2 col-xs-3 nopadding">
                     <div class="single-bannerfooter">
                         <a href="#">
-                            <img src="img/banner/footer-1.jpg" alt="" />
+                            <img src="/img/banner/footer-1.jpg" alt="" />
                         </a>
                     </div>
                 </div>
                 <div class="col-md-2 col-sm-2 col-xs-3 nopadding">
                     <div class="single-bannerfooter">
                         <a href="#">
-                            <img src="img/banner/footer-2.jpg" alt="" />
+                            <img src="/img/banner/footer-2.jpg" alt="" />
                         </a>
                     </div>
                 </div>
                 <div class="col-md-2 col-sm-2 col-xs-3 nopadding">
                     <div class="single-bannerfooter">
                         <a href="#">
-                            <img src="img/banner/footer-3.jpg" alt="" />
+                            <img src="/img/banner/footer-3.jpg" alt="" />
                         </a>
                     </div>
                 </div>
                 <div class="col-md-2 col-sm-2 col-xs-3 nopadding">
                     <div class="single-bannerfooter">
                         <a href="#">
-                            <img src="img/banner/footer-4.jpg" alt="" />
+                            <img src="/img/banner/footer-4.jpg" alt="" />
                         </a>
                     </div>
                 </div>
                 <div class="col-md-2 col-sm-2 hidden-xs nopadding">
                     <div class="single-bannerfooter">
                         <a href="#">
-                            <img src="img/banner/footer-5.jpg" alt="" />
+                            <img src="/img/banner/footer-5.jpg" alt="" />
                         </a>
                     </div>
                 </div>
                 <div class="col-md-2 col-sm-2 hidden-xs nopadding">
                     <div class="single-bannerfooter last-single">
                         <a href="#">
-                            <img src="img/banner/footer-6.jpg" alt="" />
+                            <img src="/img/banner/footer-6.jpg" alt="" />
                         </a>
                     </div>
                 </div>
@@ -232,7 +232,7 @@
                 </div>
                 <div class="col-md-6 col-xs-12">
                     <div class="footer-payment pull-right">
-                        <a href="#"><img src="img/payment.png" alt="" /></a>
+                        <a href="#"><img src="/img/payment.png" alt="" /></a>
                     </div>
                 </div>
             </div>
