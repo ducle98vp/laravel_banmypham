@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\News;
 use App\Traits\Image;
 use Illuminate\Support\Facades\DB;
+
 class NewController extends Controller
 {
     use Image;

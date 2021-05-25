@@ -20,6 +20,7 @@ Route::get('/', function () {
 Route::group([
     'middleware' => 'auth',
     'prefix'=>'admin',
+    'namespace' => 'Admin',
 ], function () {
         Route::get('/category/list','CategoryController@index')->name('categories.index');//admin/category/list -> danh sach danh muc san pham
         Route::get('/category/detail/{title}/{id}','CategoryController@detail');
@@ -39,7 +40,6 @@ Route::group([
 
         Route::group([
             'prefix' => 'new',
-            'namespace'=>'admin',
         ], function () {
             Route::get('/create','NewController@create')->name('new.create');
             Route::post('/store','NewController@store')->name('new.store');
