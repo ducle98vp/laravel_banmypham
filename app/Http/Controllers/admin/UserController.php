@@ -131,7 +131,11 @@ class UserController extends Controller
         $user->facebook=$request->facebook;
         $user->address=$request->address;
         $user->email=$request->email;
-        $user->avatar=$this->uploadImage($request->avatar);
+
+        if($request->avatar) {
+            $user->avatar=$this->uploadImage($request->avatar);
+        }
+
         $user->save();
         return back();
     }

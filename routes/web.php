@@ -35,8 +35,8 @@ Route::group([
         Route::get('/product/delete/{id}','ProductController@delete')->name('products.delete');
         Route::get('/product/create','ProductController@create')->name('products.create');
         Route::post('/product/create','ProductController@store');
-        Route::get('user/edit','UserController@editUser')->name('user.edit');
-        Route::post('user/update','UserController@update')->name('user.update');
+        Route::get('/edit','UserController@editUser')->name('user.edit');
+        Route::post('/update','UserController@update')->name('user.update');
 
         Route::group([
             'prefix' => 'new',
@@ -51,14 +51,16 @@ Route::group([
         });
 });
 
-
-Route::get('/user/login', 'UserController@getLogin')->name('users.login');
-Route::post('/user/login', 'UserController@postLogin')->name('user.postLogin');
-
-Route::get('/user/signup', 'UserController@getSignup')->name('users.signup');
-Route::post('/user/postSignup', 'UserController@postSignup')->name('users.postSignup');
-Route::get('user/getLogout', 'UserController@getLogout')->name('user.logout');
-
+Route::group([
+    'prefix' => 'admin',
+    'namespace'=> 'Admin'
+], function () {
+    Route::get('/login', 'UserController@getLogin')->name('users.login');
+    Route::post('/login', 'UserController@postLogin')->name('user.postLogin');
+    Route::get('/signup', 'UserController@getSignup')->name('users.signup');
+    Route::post('/postSignup', 'UserController@postSignup')->name('users.postSignup');
+    Route::get('/getLogout', 'UserController@getLogout')->name('user.logout');
+});
 
 Route::group([
     'prefix' => 'Page',
