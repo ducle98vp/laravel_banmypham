@@ -142,7 +142,7 @@ class ProductController extends Controller
         return redirect()->Route('products.index');
     }
 
-    public function delete($id)
+    public function delete(Request $request, $id)
     {
         $product = Product::findOrFail($id);
         $product->delete();
