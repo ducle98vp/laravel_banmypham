@@ -3,9 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use User;
 use Auth;
-use App\Models\Users;
+use App\Models\User;
 use App\Traits\Image;
 use App\Http\Controllers\Controller;
 
@@ -72,7 +71,7 @@ class UserController extends Controller
             'email'=>$request->email,
         ];
 
-        $is_insert=Users::insert($arr_inser);
+        $is_insert=User::insert($arr_inser);
         if($is_insert)
         {
             return redirect()->route('users.login');
